@@ -1,0 +1,37 @@
+{
+  "annotations": {
+    "changelogDate": "20260522182414"
+  },
+  "applications": ["store"],
+  "fields": [
+    {
+      "fieldName": "createdDate",
+      "fieldType": "Instant",
+      "fieldValidateRules": ["required"]
+    },
+    {
+      "fieldName": "status",
+      "fieldType": "String",
+      "fieldValidateRules": ["required"]
+    }
+  ],
+  "name": "ShoppingCart",
+  "relationships": [
+    {
+      "otherEntityField": "address",
+      "otherEntityName": "customerDetails",
+      "relationshipName": "customer",
+      "relationshipSide": "left",
+      "relationshipType": "one-to-one"
+    },
+    {
+      "otherEntityName": "productOrder",
+      "otherEntityRelationshipName": "cart",
+      "relationshipName": "orders",
+      "relationshipSide": "left",
+      "relationshipType": "one-to-many"
+    }
+  ],
+  "searchEngine": "no",
+  "service": "serviceClass"
+}

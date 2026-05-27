@@ -1,0 +1,21 @@
+{
+  "annotations": {
+    "changelogDate": "20260522182214"
+  },
+  "applications": ["store"],
+  "fields": [
+    {
+      "fieldName": "name",
+      "fieldType": "String",
+      "fieldValidateRules": ["required"]
+    },
+    {
+      "fieldName": "description",
+      "fieldType": "String"
+    }
+  ],
+  "name": "ProductCategory",
+  "relationships": [],
+  "searchEngine": "no",
+  "service": "serviceClass"
+}

@@ -1,0 +1,39 @@
+{
+  "annotations": {
+    "changelogDate": "20260522182514"
+  },
+  "applications": ["store"],
+  "fields": [
+    {
+      "fieldName": "placedDate",
+      "fieldType": "Instant",
+      "fieldValidateRules": ["required"]
+    },
+    {
+      "fieldName": "quantity",
+      "fieldType": "Integer",
+      "fieldValidateRules": ["required", "min"],
+      "fieldValidateRulesMin": "1"
+    }
+  ],
+  "name": "ProductOrder",
+  "pagination": "pagination",
+  "relationships": [
+    {
+      "otherEntityField": "name",
+      "otherEntityName": "product",
+      "relationshipName": "product",
+      "relationshipSide": "left",
+      "relationshipType": "many-to-one"
+    },
+    {
+      "otherEntityName": "shoppingCart",
+      "otherEntityRelationshipName": "orders",
+      "relationshipName": "cart",
+      "relationshipSide": "right",
+      "relationshipType": "many-to-one"
+    }
+  ],
+  "searchEngine": "no",
+  "service": "serviceClass"
+}

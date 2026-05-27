@@ -1,0 +1,22 @@
+{
+  "generator-jhipster": {
+    "applicationType": "monolith",
+    "authenticationType": "jwt",
+    "baseName": "store",
+    "buildTool": "maven",
+    "clientFramework": "react",
+    "devDatabaseType": "postgresql",
+    "enableSwaggerCodegen": true,
+    "entities": ["Product", "ProductCategory", "CustomerDetails", "ShoppingCart", "ProductOrder"],
+    "jhipsterVersion": "8.11.0",
+    "jwtSecretKey": "NzA4ZjgwOWM5ODZiYjJmZjVhYmFlZTk5YzI3ZjI4MDM0ZmM1NzBhM2IzNjcyMTZkMDlkNGY2YTU3YjAzY2YzNzk0ODE0NTQ0OTc4NTdlNjczM2M2OTM1NWYyMWEyNzZlY2RmYjZmNzk4OWY0Y2NlYjAyZjg1YmM1Y2VkNDk4N2E=",
+    "languages": ["en"],
+    "lastLiquibaseTimestamp": 1779474314000,
+    "monorepository": true,
+    "nativeLanguage": "en",
+    "packageName": "com.example.store",
+    "prodDatabaseType": "postgresql",
+    "skipCommitHook": true,
+    "testFrameworks": ["cypress"]
+  }
+}
