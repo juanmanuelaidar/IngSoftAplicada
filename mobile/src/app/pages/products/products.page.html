@@ -1,0 +1,31 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>Productos</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <ion-refresher slot="fixed" (ionRefresh)="loadProducts(); $event.target.complete()">
+    <ion-refresher-content></ion-refresher-content>
+  </ion-refresher>
+
+  <ion-note *ngIf="offline" color="warning" class="ion-padding">
+    {{ errorMessage }}
+  </ion-note>
+
+  <ion-spinner *ngIf="loading" class="ion-margin"></ion-spinner>
+
+  <ion-list *ngIf="products.length">
+    <ion-item *ngFor="let p of products">
+      <ion-label>
+        <h2>{{ p.name }}</h2>
+        <p>Precio: ${{ p.price }}</p>
+        <p>Stock: {{ p.stock }}</p>
+      </ion-label>
+    </ion-item>
+  </ion-list>
+
+  <ion-text *ngIf="!loading && !products.length" color="medium" class="ion-padding">
+    No hay productos para mostrar.
+  </ion-text>
+</ion-content>
