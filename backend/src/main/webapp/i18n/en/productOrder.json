@@ -2,26 +2,26 @@
   "storeApp": {
     "productOrder": {
       "home": {
-        "title": "Product Orders",
-        "refreshListLabel": "Refresh list",
-        "createLabel": "Create a new Product Order",
-        "createOrEditLabel": "Create or edit a Product Order",
-        "notFound": "No Product Orders found"
+        "title": "Ordenes de materiales",
+        "refreshListLabel": "Actualizar listado",
+        "createLabel": "Crear nueva orden",
+        "createOrEditLabel": "Crear o editar orden",
+        "notFound": "No se encontraron ordenes"
       },
-      "created": "A new Product Order is created with identifier {{ param }}",
-      "updated": "A Product Order is updated with identifier {{ param }}",
-      "deleted": "A Product Order is deleted with identifier {{ param }}",
+      "created": "Se creo una nueva orden con identificador {{ param }}",
+      "updated": "Se actualizo la orden con identificador {{ param }}",
+      "deleted": "Se elimino la orden con identificador {{ param }}",
       "delete": {
-        "question": "Are you sure you want to delete Product Order {{ id }}?"
+        "question": "Seguro que queres eliminar la orden {{ id }}?"
       },
       "detail": {
-        "title": "Product Order"
+        "title": "Orden"
       },
       "id": "ID",
-      "placedDate": "Placed Date",
-      "quantity": "Quantity",
-      "product": "Product",
-      "cart": "Cart"
+      "placedDate": "Fecha de pedido",
+      "quantity": "Cantidad",
+      "product": "Material",
+      "cart": "Carrito"
     }
   }
 }

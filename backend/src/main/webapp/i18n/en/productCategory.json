@@ -2,24 +2,24 @@
   "storeApp": {
     "productCategory": {
       "home": {
-        "title": "Product Categories",
-        "refreshListLabel": "Refresh list",
-        "createLabel": "Create a new Product Category",
-        "createOrEditLabel": "Create or edit a Product Category",
-        "notFound": "No Product Categories found"
+        "title": "Rubros de materiales",
+        "refreshListLabel": "Actualizar listado",
+        "createLabel": "Crear nuevo rubro",
+        "createOrEditLabel": "Crear o editar rubro",
+        "notFound": "No se encontraron rubros"
       },
-      "created": "A new Product Category is created with identifier {{ param }}",
-      "updated": "A Product Category is updated with identifier {{ param }}",
-      "deleted": "A Product Category is deleted with identifier {{ param }}",
+      "created": "Se creo un nuevo rubro con identificador {{ param }}",
+      "updated": "Se actualizo el rubro con identificador {{ param }}",
+      "deleted": "Se elimino el rubro con identificador {{ param }}",
       "delete": {
-        "question": "Are you sure you want to delete Product Category {{ id }}?"
+        "question": "Seguro que queres eliminar el rubro {{ id }}?"
       },
       "detail": {
-        "title": "Product Category"
+        "title": "Rubro"
       },
       "id": "ID",
-      "name": "Name",
-      "description": "Description"
+      "name": "Nombre",
+      "description": "Descripcion"
     }
   }
 }

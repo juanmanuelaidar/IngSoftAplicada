@@ -2,8 +2,7 @@ import './home.scss';
 
 import React from 'react';
 import { Link } from 'react-router-dom';
-import { Translate } from 'react-jhipster';
-import { Alert, Col, Row } from 'reactstrap';
+import { Alert, Button, Col, Row } from 'reactstrap';
 
 import { useAppSelector } from 'app/config/store';
 
@@ -11,89 +10,92 @@ export const Home = () => {
   const account = useAppSelector(state => state.authentication.account);
 
   return (
-    <Row>
-      <Col md="3" className="pad">
-        <span className="hipster rounded" />
-      </Col>
-      <Col md="9">
-        <h1 className="display-4">
-          <Translate contentKey="home.title">Welcome, Java Hipster!</Translate>
-        </h1>
-        <p className="lead">
-          <Translate contentKey="home.subtitle">This is your homepage</Translate>
-        </p>
-        {account?.login ? (
-          <div>
-            <Alert color="success">
-              <Translate contentKey="home.logged.message" interpolate={{ username: account.login }}>
-                You are logged in as user {account.login}.
-              </Translate>
-            </Alert>
+    <div className="store-home">
+      <Row className="store-hero align-items-center">
+        <Col lg="7">
+          <span className="store-kicker">Corralon online</span>
+          <h1>Materiales de construccion para gestionar tu obra de punta a punta.</h1>
+          <p className="store-lead">
+            Catalogo de cementos, ladrillos, aridos, hierros, impermeabilizantes y accesorios para controlar stock, carritos y pedidos.
+          </p>
+          <div className="store-actions">
+            {account?.login ? (
+              <>
+                <Button tag={Link} to="/product" color="primary">
+                  Ver materiales
+                </Button>
+                <Button tag={Link} to="/shopping-cart" color="secondary" outline>
+                  Ver carritos
+                </Button>
+              </>
+            ) : (
+              <>
+                <Button tag={Link} to="/login" color="primary">
+                  Iniciar sesion
+                </Button>
+                <Button tag={Link} to="/account/register" color="secondary" outline>
+                  Crear cuenta
+                </Button>
+              </>
+            )}
           </div>
-        ) : (
-          <div>
-            <Alert color="warning">
-              <Translate contentKey="global.messages.info.authenticated.prefix">If you want to </Translate>
-
-              <Link to="/login" className="alert-link">
-                <Translate contentKey="global.messages.info.authenticated.link"> sign in</Translate>
-              </Link>
-              <Translate contentKey="global.messages.info.authenticated.suffix">
-                , you can try the default accounts:
-                <br />- Administrator (login=&quot;admin&quot; and password=&quot;admin&quot;)
-                <br />- User (login=&quot;user&quot; and password=&quot;user&quot;).
-              </Translate>
-            </Alert>
-
-            <Alert color="warning">
-              <Translate contentKey="global.messages.info.register.noaccount">You do not have an account yet?</Translate>&nbsp;
-              <Link to="/account/register" className="alert-link">
-                <Translate contentKey="global.messages.info.register.link">Register a new account</Translate>
-              </Link>
-            </Alert>
+        </Col>
+        <Col lg="5">
+          <div className="store-summary" aria-label="Modulos del corralon">
+            <div>
+              <strong>Materiales</strong>
+              <span>Catalogo, precios y stock</span>
+            </div>
+            <div>
+              <strong>Carritos</strong>
+              <span>Pedidos en preparacion</span>
+            </div>
+            <div>
+              <strong>Ordenes</strong>
+              <span>Seguimiento de compras</span>
+            </div>
           </div>
-        )}
-        <p>
-          <Translate contentKey="home.question">If you have any question on JHipster:</Translate>
-        </p>
+        </Col>
+      </Row>
 
-        <ul>
-          <li>
-            <a href="https://www.jhipster.tech/" target="_blank" rel="noopener noreferrer">
-              <Translate contentKey="home.link.homepage">JHipster homepage</Translate>
-            </a>
-          </li>
-          <li>
-            <a href="https://stackoverflow.com/tags/jhipster/info" target="_blank" rel="noopener noreferrer">
-              <Translate contentKey="home.link.stackoverflow">JHipster on Stack Overflow</Translate>
-            </a>
-          </li>
-          <li>
-            <a href="https://github.com/jhipster/generator-jhipster/issues?state=open" target="_blank" rel="noopener noreferrer">
-              <Translate contentKey="home.link.bugtracker">JHipster bug tracker</Translate>
-            </a>
-          </li>
-          <li>
-            <a href="https://gitter.im/jhipster/generator-jhipster" target="_blank" rel="noopener noreferrer">
-              <Translate contentKey="home.link.chat">JHipster public chat room</Translate>
-            </a>
-          </li>
-          <li>
-            <a href="https://twitter.com/jhipster" target="_blank" rel="noopener noreferrer">
-              <Translate contentKey="home.link.follow">follow @jhipster on Twitter</Translate>
-            </a>
-          </li>
-        </ul>
+      {account?.login ? (
+        <Alert color="success" className="store-alert">
+          Sesion iniciada como <strong>{account.login}</strong>. Usa el menu de entidades o los accesos rapidos para administrar el
+          corralon.
+        </Alert>
+      ) : (
+        <Alert color="info" className="store-alert">
+          Inicia sesion con los usuarios demo para administrar materiales de construccion: admin/admin o user/user.
+        </Alert>
+      )}
 
-        <p>
-          <Translate contentKey="home.like">If you like JHipster, do not forget to give us a star on</Translate>{' '}
-          <a href="https://github.com/jhipster/generator-jhipster" target="_blank" rel="noopener noreferrer">
-            GitHub
-          </a>
-          !
-        </p>
-      </Col>
-    </Row>
+      <Row className="store-shortcuts">
+        <Col md="3" sm="6">
+          <Link to="/product" className="store-shortcut">
+            <strong>Materiales</strong>
+            <span>Crea y actualiza productos de obra.</span>
+          </Link>
+        </Col>
+        <Col md="3" sm="6">
+          <Link to="/product-category" className="store-shortcut">
+            <strong>Rubros</strong>
+            <span>Organiza cementos, aridos, hierros y mas.</span>
+          </Link>
+        </Col>
+        <Col md="3" sm="6">
+          <Link to="/shopping-cart" className="store-shortcut">
+            <strong>Carritos</strong>
+            <span>Revisa compras de clientes y obras.</span>
+          </Link>
+        </Col>
+        <Col md="3" sm="6">
+          <Link to="/product-order" className="store-shortcut">
+            <strong>Ordenes</strong>
+            <span>Controla cantidades y entregas.</span>
+          </Link>
+        </Col>
+      </Row>
+    </div>
   );
 };
 

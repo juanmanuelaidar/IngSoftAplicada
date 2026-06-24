@@ -50,6 +50,7 @@
             <column name="name" type="string"/>
             <column name="price" type="numeric"/>
             <column name="stock" type="numeric"/>
+            <column name="category_id" type="numeric"/>
             <!-- jhipster-needle-liquibase-add-loadcolumn - JHipster (and/or extensions) can add load columns here -->
         </loadData>
     </changeSet>

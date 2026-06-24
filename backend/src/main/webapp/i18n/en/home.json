@@ -1,19 +1,19 @@
 {
   "home": {
-    "title": "Welcome, Java Hipster!",
-    "subtitle": "This is your homepage",
+    "title": "Corralon online",
+    "subtitle": "Gestion de materiales de construccion, stock, carritos y ordenes.",
     "logged": {
-      "message": "You are logged in as user \"{{username}}\"."
+      "message": "Sesion iniciada como \"{{username}}\"."
     },
-    "question": "If you have any question on JHipster:",
+    "question": "Modulos del corralon:",
     "link": {
-      "homepage": "JHipster homepage",
-      "stackoverflow": "JHipster on Stack Overflow",
-      "bugtracker": "JHipster bug tracker",
-      "chat": "JHipster public chat room",
-      "follow": "follow @jhipster on Twitter"
+      "homepage": "Materiales",
+      "stackoverflow": "Rubros",
+      "bugtracker": "Carritos",
+      "chat": "Ordenes",
+      "follow": "Clientes"
     },
-    "like": "If you like JHipster, don't forget to give us a star on",
-    "github": "GitHub"
+    "like": "Usa el menu Gestion para administrar materiales de obra.",
+    "github": "Corralon"
   }
 }

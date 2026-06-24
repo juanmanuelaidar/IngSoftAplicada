@@ -2,26 +2,26 @@
   "storeApp": {
     "customerDetails": {
       "home": {
-        "title": "Customer Details",
-        "refreshListLabel": "Refresh list",
-        "createLabel": "Create a new Customer Details",
-        "createOrEditLabel": "Create or edit a Customer Details",
-        "notFound": "No Customer Details found"
+        "title": "Clientes de obra",
+        "refreshListLabel": "Actualizar listado",
+        "createLabel": "Crear nuevo cliente",
+        "createOrEditLabel": "Crear o editar cliente",
+        "notFound": "No se encontraron clientes"
       },
-      "created": "A new Customer Details is created with identifier {{ param }}",
-      "updated": "A Customer Details is updated with identifier {{ param }}",
-      "deleted": "A Customer Details is deleted with identifier {{ param }}",
+      "created": "Se creo un nuevo cliente con identificador {{ param }}",
+      "updated": "Se actualizo el cliente con identificador {{ param }}",
+      "deleted": "Se elimino el cliente con identificador {{ param }}",
       "delete": {
-        "question": "Are you sure you want to delete Customer Details {{ id }}?"
+        "question": "Seguro que queres eliminar el cliente {{ id }}?"
       },
       "detail": {
-        "title": "Customer Details"
+        "title": "Cliente"
       },
       "id": "ID",
-      "phone": "Phone",
-      "address": "Address",
-      "user": "User",
-      "shoppingCart": "Shopping Cart"
+      "phone": "Telefono",
+      "address": "Direccion de entrega",
+      "user": "Usuario",
+      "shoppingCart": "Carrito"
     }
   }
 }

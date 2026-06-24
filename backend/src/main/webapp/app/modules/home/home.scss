@@ -1,10 +1,140 @@
 /* ==========================================================================
 Main page styles
 ========================================================================== */
-.hipster {
-  display: inline-block;
-  width: 100%;
-  height: 497px;
-  background: url('/content/images/jhipster_family_member_1.svg') no-repeat center top;
-  background-size: contain;
+.store-home {
+  color: #1f2933;
+}
+
+.store-hero {
+  min-height: 360px;
+  padding: 2.5rem;
+  border-radius: 8px;
+  background:
+    linear-gradient(135deg, rgba(8, 47, 73, 0.92), rgba(14, 116, 144, 0.86)),
+    url('/content/images/logo-jhipster.png') no-repeat right 2rem center;
+  background-size: auto, 180px;
+  color: #fff;
+}
+
+.store-kicker {
+  display: inline-flex;
+  margin-bottom: 1rem;
+  padding: 0.35rem 0.7rem;
+  border: 1px solid rgba(255, 255, 255, 0.4);
+  border-radius: 999px;
+  font-size: 0.8rem;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+.store-hero h1 {
+  max-width: 760px;
+  margin: 0;
+  font-size: 2.75rem;
+  font-weight: 800;
+  line-height: 1.05;
+}
+
+.store-lead {
+  max-width: 680px;
+  margin: 1rem 0 0;
+  color: rgba(255, 255, 255, 0.88);
+  font-size: 1.15rem;
+}
+
+.store-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.75rem;
+  margin-top: 1.5rem;
+}
+
+.store-summary {
+  display: grid;
+  gap: 0.75rem;
+  margin-left: auto;
+  max-width: 320px;
+
+  div {
+    padding: 1rem;
+    border: 1px solid rgba(255, 255, 255, 0.24);
+    border-radius: 8px;
+    background: rgba(255, 255, 255, 0.12);
+  }
+
+  strong,
+  span {
+    display: block;
+  }
+
+  span {
+    color: rgba(255, 255, 255, 0.78);
+  }
+}
+
+.store-alert {
+  margin: 1.25rem 0;
+}
+
+.store-shortcuts {
+  row-gap: 1rem;
+}
+
+.store-shortcut {
+  display: block;
+  height: 100%;
+  padding: 1rem;
+  border: 1px solid #d8dee9;
+  border-radius: 8px;
+  color: #1f2933;
+  text-decoration: none;
+
+  &:hover {
+    border-color: #0e7490;
+    color: #0e7490;
+    text-decoration: none;
+  }
+
+  strong,
+  span {
+    display: block;
+  }
+
+  span {
+    margin-top: 0.35rem;
+    color: #52616f;
+    font-weight: 400;
+  }
+}
+
+@media (max-width: 991.98px) {
+  .store-hero {
+    padding: 1.5rem;
+    background-image: linear-gradient(135deg, rgba(8, 47, 73, 0.94), rgba(14, 116, 144, 0.9));
+  }
+
+  .store-hero h1 {
+    font-size: 2.2rem;
+  }
+
+  .store-summary {
+    margin-top: 1.5rem;
+    margin-left: 0;
+    max-width: none;
+  }
+}
+
+@media (max-width: 575.98px) {
+  .store-hero {
+    padding: 1.25rem;
+  }
+
+  .store-hero h1 {
+    font-size: 1.85rem;
+  }
+
+  .store-actions .btn {
+    width: 100%;
+  }
 }

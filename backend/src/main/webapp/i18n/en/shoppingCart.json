@@ -2,26 +2,26 @@
   "storeApp": {
     "shoppingCart": {
       "home": {
-        "title": "Shopping Carts",
-        "refreshListLabel": "Refresh list",
-        "createLabel": "Create a new Shopping Cart",
-        "createOrEditLabel": "Create or edit a Shopping Cart",
-        "notFound": "No Shopping Carts found"
+        "title": "Carritos de compra",
+        "refreshListLabel": "Actualizar listado",
+        "createLabel": "Crear nuevo carrito",
+        "createOrEditLabel": "Crear o editar carrito",
+        "notFound": "No se encontraron carritos"
       },
-      "created": "A new Shopping Cart is created with identifier {{ param }}",
-      "updated": "A Shopping Cart is updated with identifier {{ param }}",
-      "deleted": "A Shopping Cart is deleted with identifier {{ param }}",
+      "created": "Se creo un nuevo carrito con identificador {{ param }}",
+      "updated": "Se actualizo el carrito con identificador {{ param }}",
+      "deleted": "Se elimino el carrito con identificador {{ param }}",
       "delete": {
-        "question": "Are you sure you want to delete Shopping Cart {{ id }}?"
+        "question": "Seguro que queres eliminar el carrito {{ id }}?"
       },
       "detail": {
-        "title": "Shopping Cart"
+        "title": "Carrito"
       },
       "id": "ID",
-      "createdDate": "Created Date",
-      "status": "Status",
-      "customer": "Customer",
-      "orders": "Orders"
+      "createdDate": "Fecha de creacion",
+      "status": "Estado",
+      "customer": "Cliente",
+      "orders": "Ordenes"
     }
   }
 }
