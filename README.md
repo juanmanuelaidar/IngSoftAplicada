@@ -8,7 +8,11 @@ Entrega de una aplicacion e-commerce generada con JHipster, pruebas automatizada
 - `backend/`: aplicacion JHipster monolitica Spring Boot 3, React, JWT, PostgreSQL, Liquibase y Cypress.
 - `mobile/`: aplicacion Ionic/Angular PWA que consume la API de productos del backend y mantiene cache offline.
 - `docker/`: stack de despliegue con app, PostgreSQL, Elasticsearch, Logstash y Kibana.
+- `docs/`: documentacion de estado, implementacion y estructura.
+- `archive/legacy-root-jhipster/`: copia historica de una app JHipster que antes estaba en la raiz; no se usa para ejecutar la entrega.
 - `Jenkinsfile`: pipeline CI/CD para build, tests, imagen Docker y push a Docker Hub.
+
+La fuente de verdad tecnica es `backend/`. La raiz queda reservada para orquestacion, documentacion y comandos comunes.
 
 ## Comandos rapidos
 
