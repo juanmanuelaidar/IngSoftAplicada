@@ -12,9 +12,7 @@ IngSoftAplicada/
 ├── docs/
 ├── backend/
 ├── mobile/
-├── docker/
-└── archive/
-    └── legacy-root-jhipster/
+└── docker/
 ```
 
 ## Fuente de verdad
@@ -24,7 +22,8 @@ IngSoftAplicada/
 - `docker/`: despliegue de app, PostgreSQL y ELK.
 - `jdl/`: modelo usado para generar el backend.
 - `docs/`: documentacion y evidencia.
-- `archive/legacy-root-jhipster/`: copia historica de una app JHipster que estaba en la raiz. No se usa para ejecutar la entrega.
+
+La app JHipster duplicada que antes estaba en la raiz fue eliminada del arbol actual. La unica app backend versionada para la entrega es `backend/`.
 
 ## Comandos
 
