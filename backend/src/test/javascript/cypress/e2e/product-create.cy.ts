@@ -1,4 +1,6 @@
 describe('Create product', () => {
+  // Verifica el flujo E2E de creacion de un producto usando un usuario autenticado.
+  // Primero obtiene el JWT por API y despues valida que POST /api/products cree el recurso.
   it('should create a product by API', () => {
     const productName = `Teclado-${Date.now()}`;
 

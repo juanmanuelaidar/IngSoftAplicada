@@ -1,4 +1,6 @@
 describe('API login', () => {
+  // Verifica que el login contra /api/authenticate devuelve un JWT valido
+  // y que la app lo guarda en localStorage para mantener la sesion.
   it('should login with /api/authenticate and store token', () => {
     cy.visit('/');
     cy.loginByApi('admin', 'admin');
