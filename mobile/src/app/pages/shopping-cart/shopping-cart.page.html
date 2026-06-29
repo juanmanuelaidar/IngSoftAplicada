@@ -1,0 +1,72 @@
+<ion-header>
+  <ion-toolbar color="primary">
+    <ion-buttons slot="start">
+      <ion-back-button defaultHref="/products"></ion-back-button>
+    </ion-buttons>
+    <ion-title>Carritos</ion-title>
+    <ion-buttons slot="end">
+      <ion-button aria-label="Cerrar sesion" (click)="logout()">
+        <ion-icon slot="icon-only" name="log-out-outline"></ion-icon>
+      </ion-button>
+      <ion-button aria-label="Recargar carritos" (click)="loadCarts()">
+        <ion-icon slot="icon-only" name="refresh-outline"></ion-icon>
+      </ion-button>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <ion-refresher slot="fixed" (ionRefresh)="onRefresh($event)">
+    <ion-refresher-content></ion-refresher-content>
+  </ion-refresher>
+
+  <section class="cart-actions">
+    <h2>Carrito activo</h2>
+    <p *ngIf="activeCartId">Carrito #{{ activeCartId }}</p>
+    <p *ngIf="!activeCartId">Todavia no hay un carrito activo.</p>
+    <ion-button expand="block" (click)="createCart()" [disabled]="loading">Nuevo carrito</ion-button>
+    <ion-button *ngIf="activeCartId" expand="block" fill="outline" (click)="closeActiveCart()">Cerrar carrito activo</ion-button>
+  </section>
+
+  <ion-list *ngIf="orders.length">
+    <ion-list-header>
+      <ion-label>Productos del carrito</ion-label>
+    </ion-list-header>
+    <ion-item *ngFor="let order of orders; trackBy: trackByOrderId">
+      <ion-label>
+        <h2>{{ order.product?.name || 'Producto #' + order.product?.id }}</h2>
+        <p>Cantidad: {{ order.quantity }}</p>
+        <p>Agregado: {{ order.placedDate | date: 'short' }}</p>
+      </ion-label>
+      <ion-note slot="end" *ngIf="order.product?.price">{{ order.product?.price | currency }}</ion-note>
+    </ion-item>
+  </ion-list>
+
+  <ion-list *ngIf="carts.length; else emptyState">
+    <ion-list-header>
+      <ion-label>Carritos existentes</ion-label>
+    </ion-list-header>
+    <ion-item *ngIf="offline" color="warning">
+      <ion-icon name="cloud-offline-outline" slot="start"></ion-icon>
+      <ion-label>Mostrando datos guardados sin conexion</ion-label>
+    </ion-item>
+
+    <ion-item *ngFor="let cart of carts; trackBy: trackByCartId">
+      <ion-label>
+        <h2>Carrito #{{ cart.id }}</h2>
+        <p>Estado: {{ cart.status }}</p>
+        <p>Creado: {{ cart.createdDate | date: 'short' }}</p>
+      </ion-label>
+    </ion-item>
+  </ion-list>
+
+  <ng-template #emptyState>
+    <section class="empty-state">
+      <ion-spinner *ngIf="loading" name="crescent"></ion-spinner>
+      <ion-icon *ngIf="!loading" name="cart-outline"></ion-icon>
+      <h1>{{ loading ? 'Cargando carritos' : 'Sin carritos' }}</h1>
+      <p *ngIf="errorMessage">{{ errorMessage }}</p>
+      <ion-button *ngIf="!loading" fill="outline" (click)="loadCarts()">Reintentar</ion-button>
+    </section>
+  </ng-template>
+</ion-content>

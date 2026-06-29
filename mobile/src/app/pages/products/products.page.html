@@ -2,6 +2,12 @@
   <ion-toolbar color="primary">
     <ion-title>Productos</ion-title>
     <ion-buttons slot="end">
+      <ion-button aria-label="Cerrar sesion" (click)="logout()">
+        <ion-icon slot="icon-only" name="log-out-outline"></ion-icon>
+      </ion-button>
+      <ion-button aria-label="Ver carritos" routerLink="/shopping-cart">
+        <ion-icon slot="icon-only" name="cart-outline"></ion-icon>
+      </ion-button>
       <ion-button aria-label="Recargar productos" (click)="loadProducts()">
         <ion-icon slot="icon-only" name="refresh-outline"></ion-icon>
       </ion-button>
@@ -13,6 +19,40 @@
   <ion-refresher slot="fixed" (ionRefresh)="onRefresh($event)">
     <ion-refresher-content></ion-refresher-content>
   </ion-refresher>
+
+  <section class="product-form">
+    <h2>Crear producto</h2>
+    <ion-list lines="full">
+      <ion-item>
+        <ion-label position="stacked">Nombre</ion-label>
+        <ion-input [(ngModel)]="newProduct.name" name="name" autocomplete="off"></ion-input>
+      </ion-item>
+      <ion-item>
+        <ion-label position="stacked">Precio</ion-label>
+        <ion-input [(ngModel)]="newProduct.price" name="price" type="number" inputmode="decimal"></ion-input>
+      </ion-item>
+      <ion-item>
+        <ion-label position="stacked">Stock</ion-label>
+        <ion-input [(ngModel)]="newProduct.stock" name="stock" type="number" inputmode="numeric"></ion-input>
+      </ion-item>
+    </ion-list>
+    <ion-button expand="block" [disabled]="saving" (click)="createProduct()">
+      <ion-spinner *ngIf="saving" name="crescent"></ion-spinner>
+      <span *ngIf="!saving">Crear producto</span>
+    </ion-button>
+    <ion-text *ngIf="successMessage" color="success">
+      <p>{{ successMessage }}</p>
+    </ion-text>
+    <ion-text *ngIf="createErrorMessage" color="danger">
+      <p>{{ createErrorMessage }}</p>
+    </ion-text>
+    <ion-text *ngIf="cartMessage" color="success">
+      <p>{{ cartMessage }}</p>
+    </ion-text>
+    <ion-text *ngIf="cartErrorMessage" color="danger">
+      <p>{{ cartErrorMessage }}</p>
+    </ion-text>
+  </section>
 
   <ion-list *ngIf="products.length; else emptyState">
     <ion-item *ngIf="offline" color="warning">
@@ -26,6 +66,10 @@
         <p>Stock: {{ product.stock }}</p>
       </ion-label>
       <ion-note slot="end">{{ product.price | currency }}</ion-note>
+      <ion-button slot="end" fill="outline" [disabled]="addingProductId === product.id" (click)="addToCart(product)">
+        <ion-spinner *ngIf="addingProductId === product.id" name="crescent"></ion-spinner>
+        <ion-icon *ngIf="addingProductId !== product.id" slot="icon-only" name="cart-outline"></ion-icon>
+      </ion-button>
     </ion-item>
   </ion-list>
 

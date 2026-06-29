@@ -1,27 +1,18 @@
-.product-form {
+.cart-actions {
   padding: 16px;
   border-bottom: 1px solid #e2e8f0;
 }
 
-.product-form h2 {
-  margin: 0 0 12px;
+.cart-actions h2 {
+  margin: 0 0 8px;
   color: #0f172a;
   font-size: 18px;
   font-weight: 700;
 }
 
-.product-form ion-list {
-  margin-bottom: 12px;
-}
-
-.product-form ion-spinner {
-  width: 18px;
-  height: 18px;
-}
-
-ion-item ion-button ion-spinner {
-  width: 18px;
-  height: 18px;
+.cart-actions p {
+  margin: 0 0 12px;
+  color: #475569;
 }
 
 .empty-state {

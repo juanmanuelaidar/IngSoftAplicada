@@ -1,0 +1,26 @@
+.login-shell {
+  display: grid;
+  min-height: 100%;
+  place-items: center;
+  padding: 24px;
+}
+
+.login-form {
+  width: min(100%, 420px);
+}
+
+.login-form h1 {
+  margin: 0 0 20px;
+  color: #0f172a;
+  font-size: 26px;
+  font-weight: 800;
+}
+
+.login-form ion-list {
+  margin-bottom: 16px;
+}
+
+.login-form ion-spinner {
+  width: 18px;
+  height: 18px;
+}
